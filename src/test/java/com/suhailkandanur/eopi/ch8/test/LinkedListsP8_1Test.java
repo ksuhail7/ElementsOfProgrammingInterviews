@@ -54,4 +54,11 @@ public class LinkedListsP8_1Test {
         LinkedList.printLinkedList(mergeList);
     }
 
+    @Test
+    public void testNullLists() {
+        int expected = 0;
+        Node mergeList = LinkedListsP8_1.merge(null, null);
+        assertEquals(expected, length(mergeList));
+    }
+
 }
