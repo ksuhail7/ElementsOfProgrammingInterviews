@@ -37,4 +37,21 @@ public interface LinkedList {
         }
         return head;
     }
+
+    static int compare(Node list1, Node list2) {
+        int len1 = length(list1);
+        int len2 = length(list2);
+        if(len1 != len2)
+            return len1 > len2 ? +1 : -1;
+        else {
+            //compare elements
+            while(list1 != null && list2 != null) {
+                if(list1.getData() != list2.getData())
+                    return -1;
+                list1 = list1.getNext();
+                list2 = list2.getNext();
+            }
+        }
+        return 0;
+    }
 }

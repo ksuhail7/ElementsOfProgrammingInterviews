@@ -6,12 +6,13 @@ import com.suhailkandanur.eopi.util.Node;
  * Created by suhail on 2016-11-01.
  */
 public class LinkedListsP8_2 {
-    public static Node reverseList(Node head) {
+    public static Node reverseList(final Node head) {
+        Node hd = head;
         Node newHead = null;
         Node p = null;
-        while(head != null) {
-            newHead = head;
-            head = head.getNext();
+        while(hd != null) {
+            newHead = hd;
+            hd = hd.getNext();
             newHead.setNext(p);
             p = newHead;
         }
