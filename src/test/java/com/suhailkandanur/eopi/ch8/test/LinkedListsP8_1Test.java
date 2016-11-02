@@ -22,26 +22,9 @@ public class LinkedListsP8_1Test {
     public void setUpLinkedLists() {
         int[] list1 = {2, 4, 6, 7, 10, 18};
         int[] list2 = {1, 2, 3, 5, 8, 11, 12, 14};
-        Node ptr1 = null, ptr2 = null;
-        for(int val: list1) {
-            Node node = new Node(val);
-            if(head1 == null) {
-                head1 = node;
-            } else {
-                ptr1.setNext(node);
-            }
-            ptr1 = node;
-        }
+        head1 = LinkedList.createList(list1);
+        head2 = LinkedList.createList(list2);
 
-        for(int val: list2) {
-            Node node = new Node(val);
-            if(head2 == null) {
-                head2 = node;
-            }else {
-                ptr2.setNext(node);
-            }
-            ptr2 = node;
-        }
     }
 
     @Test

@@ -6,6 +6,9 @@ import com.suhailkandanur.eopi.util.Node;
  * Created by suhail on 2016-10-30.
  */
 public class LinkedListsP8_1 {
+    public static void main(String[] args) {
+        System.out.println("Hello world");
+    }
     public static Node merge(Node list1, Node list2) {
         Node head1 = list1;
         Node head2 = list2;
