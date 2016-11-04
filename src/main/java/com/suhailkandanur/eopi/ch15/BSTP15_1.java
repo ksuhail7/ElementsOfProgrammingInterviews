@@ -1,45 +1,17 @@
 package com.suhailkandanur.eopi.ch15;
 
+import com.suhailkandanur.eopi.util.TreeNode;
+
 /**
  * Created by suhail on 2016-11-03.
  */
 public class BSTP15_1 {
-    public static class BSTNode {
-        int data;
-        BSTNode left, right;
 
-        public BSTNode(int data) {
-            this.data = data;
-            this.left = null;
-            this.right = null;
-        }
-
-        public int getData() {
-            return data;
-        }
-
-        public BSTNode getLeft() {
-            return left;
-        }
-
-        public BSTNode getRight() {
-            return right;
-        }
-
-        public void setLeft(BSTNode left) {
-            this.left = left;
-        }
-
-        public void setRight(BSTNode right) {
-            this.right = right;
-        }
-    }
-
-    public static boolean isBST(BSTNode root) {
+    public static boolean isBST(TreeNode root) {
         if(root == null)
             return true;
-        BSTNode leftNode = root.getLeft();
-        BSTNode rightNode = root.getRight();
+        TreeNode leftNode = root.getLeft();
+        TreeNode rightNode = root.getRight();
 
         if(leftNode != null) {
             if(root.getData() < leftNode.getData())
@@ -53,8 +25,8 @@ public class BSTP15_1 {
         return isBST(leftNode) && isBST(rightNode);
     }
 
-    public static BSTNode createBST(int[] array) {
-        BSTNode root = null;
+    public static TreeNode createBST(int[] array) {
+        TreeNode root = null;
         for (int i = 0; i < array.length; i++) {
             int data = array[i];
             root = createBST(root, data);
@@ -62,9 +34,9 @@ public class BSTP15_1 {
         return root;
     }
 
-    private static BSTNode createBST(BSTNode root, int value) {
+    private static TreeNode createBST(TreeNode root, int value) {
         if (root == null) {
-            root = new BSTNode(value);
+            root = new TreeNode(value);
         } else if(root.getData() > value) {
             root.setLeft(createBST(root.getLeft(), value));
         } else if(root.getData() <= value) {
@@ -73,7 +45,7 @@ public class BSTP15_1 {
         return root;
     }
 
-    public static void DFS(BSTNode root) {
+    public static void DFS(TreeNode root) {
         if(root == null)
             return;
         DFS(root.getLeft());
@@ -81,7 +53,7 @@ public class BSTP15_1 {
         System.out.println(root.getData());
     }
 
-    public static void BFS(BSTNode root) {
+    public static void BFS(TreeNode root) {
         if (root == null) {
             return;
         }
