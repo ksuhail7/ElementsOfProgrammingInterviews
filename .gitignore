@@ -16,3 +16,5 @@ build/
 gradle/
 gradlew
 gradlew.bat
+src/main/resources/
+src/test/resources/
