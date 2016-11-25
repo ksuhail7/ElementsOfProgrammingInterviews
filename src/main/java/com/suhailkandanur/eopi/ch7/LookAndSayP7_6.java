@@ -1,7 +1,5 @@
 package com.suhailkandanur.eopi.ch7;
 
-import sun.jvm.hotspot.utilities.IntArray;
-
 /**
  * Problem 7.6: Write a function that takes as input an integer n,
  * and returns the n-th integer in the look-and-say sequence.

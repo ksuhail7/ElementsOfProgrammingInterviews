@@ -24,6 +24,7 @@ public class AnagramsP13_1 {
             String listAsStr = set.stream().collect(Collectors.joining(","));
             logger.info("-----\n{}", listAsStr);
         });
+        logger.info("done1");
     }
 
     private static List<Set<String>> partitionAnagrams(String dictWordsFile) {

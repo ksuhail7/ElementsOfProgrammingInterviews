@@ -7,9 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static com.suhailkandanur.eopi.util.LinkedList.length;
-import static org.junit.Assert.*;
-
-import static com.sun.tools.doclint.Entity.nu;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by suhail on 2016-10-30.

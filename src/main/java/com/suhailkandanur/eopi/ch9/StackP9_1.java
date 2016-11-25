@@ -1,8 +1,5 @@
 package com.suhailkandanur.eopi.ch9;
 
-import static com.sun.tools.doclint.Entity.ne;
-import static sun.jvm.hotspot.oops.CellTypeState.top;
-
 /**
  * Created by suhail on 2016-11-01.
  */
