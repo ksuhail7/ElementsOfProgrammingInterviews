@@ -12,8 +12,6 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static com.suhailkandanur.eopi.util.ArrayUtils.printArray;
-
 /**
  * Problem 13.1: Write a function that takes as input a dictionary of English words, and returns
  * a  partition of the dictionary into subsets of words taht are all anagrams of each other.
