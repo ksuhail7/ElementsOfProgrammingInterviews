@@ -1,5 +1,6 @@
 package com.suhailkandanur.eopi.ch11;
 
+import com.suhailkandanur.eopi.util.ArrayUtils;
 import com.suhailkandanur.eopi.util.RandomGen;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -68,18 +69,9 @@ public class MergeSortedFilesP11_1 {
 
     public static void main(String[] args) {
         int[] unsortedIntArray = RandomGen.generateRandom(20, 200);
-        printArray(unsortedIntArray);
+        ArrayUtils.printArray(unsortedIntArray);
         int[] sortedArray = mergeSort(unsortedIntArray);
-        printArray(sortedArray);
+        ArrayUtils.printArray(sortedArray);
     }
 
-    private static void printArray(int[] array) {
-        if (array == null || array.length < 1) {
-            return;
-        }
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + ", ");
-        }
-        System.out.println();
-    }
 }
