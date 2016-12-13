@@ -22,12 +22,17 @@ public class AnagramsP13_1 {
     private static final Logger logger = LoggerFactory.getLogger(AnagramsP13_1.class);
 
     public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
         String dictWordsFile = "/usr/share/dict/words";
         List<Set<String>> sets = partitionAnagrams(dictWordsFile);
         sets.stream().filter(s -> s.size() > 1).forEach(set -> {
             String listAsStr = set.stream().collect(Collectors.joining(","));
             logger.info("{}", listAsStr);
         });
+        long endTime = System.currentTimeMillis();
+        long duration = (endTime - startTime);
+        System.out.println("completed in " + duration + " millisecs");
+
     }
 
     private static List<Set<String>> partitionAnagrams(String dictWordsFile) {

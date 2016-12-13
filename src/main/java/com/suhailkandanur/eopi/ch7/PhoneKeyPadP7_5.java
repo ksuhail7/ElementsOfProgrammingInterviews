@@ -1,5 +1,11 @@
 package com.suhailkandanur.eopi.ch7;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -22,6 +28,24 @@ public class PhoneKeyPadP7_5 {
         keyPadMap.put(7, new char[]{'p', 'q', 'r', 's'});
         keyPadMap.put(8, new char[]{'t', 'u', 'v'});
         keyPadMap.put(9, new char[]{'w', 'x', 'y', 'z'});
+
+        //construct a valid list of words from dictionary
+        String dictWordsFile = "/usr/share/dict/words";
+        Path dictFile = Paths.get(dictWordsFile);
+        if (Files.exists(dictFile)) {
+            Charset charset = Charset.forName("US-ASCII");
+            try (BufferedReader reader = Files.newBufferedReader(dictFile, charset)) {
+                String line = null;
+                while ((line = reader.readLine()) != null) {
+                    //System.out.println(line);
+                    line = line.replaceAll("\\s*", "");
+                    line = line.toLowerCase();
+
+                }
+            } catch (IOException ioe) {
+                System.err.println("unable to construct list of words");
+            }
+        }
     }
 
     public static List<String> mnemonics(String numeric) {
@@ -40,6 +64,6 @@ public class PhoneKeyPadP7_5 {
     }
 
     public static void main(String[] args) {
-        mnemonics("23").forEach(System.out::println);
+        mnemonics("283743").forEach(System.out::println);
     }
 }

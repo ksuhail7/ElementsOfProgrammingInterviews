@@ -23,6 +23,6 @@ public class LookAndSayP7_6 {
     }
 
     public static void main(String[] args) {
-        System.out.println(lookAndSaySeq(6));
+        System.out.println(lookAndSaySeq(10));
     }
 }

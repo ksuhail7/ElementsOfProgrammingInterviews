@@ -60,7 +60,7 @@ public class RomanToDecimalP7_7 {
     }
 
     public static void main(String[] args) throws Exception {
-        String roman= "IXX";
+        String roman= "CDLXIX";
         System.out.println(romanToDecimal(roman));
     }
 }

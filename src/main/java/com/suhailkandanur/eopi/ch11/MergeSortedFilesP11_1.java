@@ -68,8 +68,8 @@ public class MergeSortedFilesP11_1 {
     }
 
     public static void main(String[] args) {
-        int[] unsortedIntArray = RandomGen.generateRandom(20, 200);
-        ArrayUtils.printArray(unsortedIntArray);
+        int[] unsortedIntArray = RandomGen.generateRandom(20000, 200000);
+       // ArrayUtils.printArray(unsortedIntArray);
         int[] sortedArray = mergeSort(unsortedIntArray);
         ArrayUtils.printArray(sortedArray);
     }
