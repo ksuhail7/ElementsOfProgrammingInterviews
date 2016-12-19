@@ -35,10 +35,11 @@ public class MinBatteryCapacityP6_8 {
             int slope = z - prev;
             prev = z;
             sum = sum + slope;
-            if((batteryCapacity + sum) > batteryCapacity) {
-                batteryCapacity += sum;
+            if(sum < 0)
                 sum = 0;
-            }
+            if(batteryCapacity < sum)
+                batteryCapacity = sum;
+
         }
         return batteryCapacity;
     }
@@ -61,5 +62,8 @@ public class MinBatteryCapacityP6_8 {
         new Coordinate(0,0, 94),
         new Coordinate(0,0, 90),
         new Coordinate(0,0, 97)};
+
+        int capacity = minBatteryCapacity(coordinates);
+        System.out.println(capacity);
     }
 }
