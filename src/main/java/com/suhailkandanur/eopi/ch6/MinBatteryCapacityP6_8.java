@@ -5,7 +5,8 @@ package com.suhailkandanur.eopi.ch6;
  */
 public class MinBatteryCapacityP6_8 {
     public static class Coordinate {
-        private int x, y,z;
+        private int x, y, z;
+
         public Coordinate(int x, int y, int z) {
             this.x = x;
             this.y = y;
@@ -26,7 +27,7 @@ public class MinBatteryCapacityP6_8 {
     }
 
     public static int minBatteryCapacity(Coordinate[] coordinates) {
-        if(coordinates == null || coordinates.length < 1)
+        if (coordinates == null || coordinates.length < 1)
             return 0;
         int batteryCapacity = 0;
         int prev = coordinates[0].getZ(), sum = 0;
@@ -35,33 +36,37 @@ public class MinBatteryCapacityP6_8 {
             int slope = z - prev;
             prev = z;
             sum = sum + slope;
-            if(sum < 0)
+            if (sum < 0)
                 sum = 0;
-            if(batteryCapacity < sum)
+            if (batteryCapacity < sum)
                 batteryCapacity = sum;
 
         }
         return batteryCapacity;
     }
 
+    public static int minBatteryCapacityUsingDivideAndConquer(Coordinate[] coordinates) {
+        return 0;
+    }
+
     public static void main(String[] args) {
-        Coordinate[] coordinates = new Coordinate[] { new Coordinate(0,0, 100),
-        new Coordinate(0,0, 113),
-        new Coordinate(0, 0, 110),
-        new Coordinate(0,0,85),
-        new Coordinate(0,0,105),
-        new Coordinate(0,0, 102),
-        new Coordinate(0,0, 86),
-        new Coordinate(0,0, 63),
-        new Coordinate(0,0, 81),
-        new Coordinate(0,0, 101),
-        new Coordinate(0,0, 94),
-        new Coordinate(0,0, 106),
-        new Coordinate(0,0, 101),
-        new Coordinate(0,0, 79),
-        new Coordinate(0,0, 94),
-        new Coordinate(0,0, 90),
-        new Coordinate(0,0, 97)};
+        Coordinate[] coordinates = new Coordinate[]{new Coordinate(0, 0, 100),
+                new Coordinate(0, 0, 113),
+                new Coordinate(0, 0, 110),
+                new Coordinate(0, 0, 85),
+                new Coordinate(0, 0, 105),
+                new Coordinate(0, 0, 102),
+                new Coordinate(0, 0, 86),
+                new Coordinate(0, 0, 63),
+                new Coordinate(0, 0, 81),
+                new Coordinate(0, 0, 101),
+                new Coordinate(0, 0, 94),
+                new Coordinate(0, 0, 106),
+                new Coordinate(0, 0, 101),
+                new Coordinate(0, 0, 79),
+                new Coordinate(0, 0, 94),
+                new Coordinate(0, 0, 90),
+                new Coordinate(0, 0, 97)};
 
         int capacity = minBatteryCapacity(coordinates);
         System.out.println(capacity);
