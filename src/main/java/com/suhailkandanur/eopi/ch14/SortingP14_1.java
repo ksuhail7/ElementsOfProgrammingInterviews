@@ -13,8 +13,8 @@ package com.suhailkandanur.eopi.ch14;
  */
 public class SortingP14_1 {
     public static void main(String[] args) {
-        int[] A = new int[] {1, 3, 5, 6, 7};
-        int[] B = new int[] {1, 3, 5, 6, 7};
+        int[] A = new int[] {2, 9};
+        int[] B = new int[] {1, 3, 5, 6, 7, 8};
         int[] C = intersection(A, B);
         for (int i = 0; C != null && i < C.length; i++) {
             System.out.print(C[i] + ", ");
