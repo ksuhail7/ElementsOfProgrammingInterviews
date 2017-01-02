@@ -1,6 +1,9 @@
 package com.suhailkandanur.eopi.ch9;
 
-import com.suhailkandanur.eopi.util.*;
+import com.suhailkandanur.eopi.util.ArrayUtils;
+import com.suhailkandanur.eopi.util.BinarySearchTree;
+import com.suhailkandanur.eopi.util.RandomGen;
+import com.suhailkandanur.eopi.util.TreeNode;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -18,7 +21,7 @@ public class TreeTraverseP9_10 {
         traverseAndPrint(root);
     }
 
-    private static void traverseAndPrint(TreeNode root) {
+    public static void traverseAndPrint(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();
         TreeNode separator = new TreeNode(-1);
         queue.add(root);
