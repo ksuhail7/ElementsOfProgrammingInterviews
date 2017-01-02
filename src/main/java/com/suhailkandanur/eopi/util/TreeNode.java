@@ -5,12 +5,13 @@ package com.suhailkandanur.eopi.util;
  */
 public class TreeNode {
     int data;
-    TreeNode left, right;
+    TreeNode left, right, parent;
 
     public TreeNode(int data) {
         this.data = data;
         this.left = null;
         this.right = null;
+        this.parent = null;
     }
 
     public int getData() {
@@ -31,6 +32,14 @@ public class TreeNode {
 
     public void setRight(TreeNode right) {
         this.right = right;
+    }
+
+    public TreeNode getParent() {
+        return parent;
+    }
+
+    public void setParent(TreeNode parent) {
+        this.parent = parent;
     }
 }
 
