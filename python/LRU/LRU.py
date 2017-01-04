@@ -17,6 +17,8 @@ class LRU:
 
     def evict(self):
     	evicted = None
+    	if self.isEmpty is True:
+    		return None
     	if self.tail is not None:
     		evicted = self.tail
     		previous = self.tail.getPrevious()
@@ -24,8 +26,11 @@ class LRU:
     			previous.setNext(None)
     		self.tail = previous
     		evicted.setPrevious(None)
+    		evicted.setNext(None)
+    		if self.head.getKey() == evicted.getKey():
+    			self.head = None
     		del self.hash[evicted.getKey()]
-    		print("Evicted node:" + str(evicted.getKey()) + ", " + evicted.getValue())
+    		#print("Evicted node:" + str(evicted.getKey()) + ", " + evicted.getValue())
     		self.count -= 1
     	return evicted
 
@@ -44,9 +49,11 @@ class LRU:
     	if key not in self.hash:
     		if key not in self.datastore:
     			raise KeyError
+    		node = Node(key, self.datastore[key])
     		if self.isFull():
     			evicted = self.evict()
-    		node = Node(key, self.datastore[key])
+    			if self.isFull():
+    				return node
     		self.count+=1
     	else:
     		node = self.hash[key]	
@@ -67,7 +74,7 @@ class LRU:
 
 
     def isFull(self):
-    	if self.count == self.size:
+    	if self.count >= self.size:
     		return True
     	return False
 
