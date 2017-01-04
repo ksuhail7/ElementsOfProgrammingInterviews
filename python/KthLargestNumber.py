@@ -18,7 +18,20 @@ def partition_array(array, lo, hi, k):
 	small = hi
 
 	while equals <= small:
-		print("hello")
+		if array[equals] > k:
+			array[equals] = array[large] + array[equals]
+			array[large] = array[equals] - array[large]
+			array[equals] = array[equals] - array[large]
+			equals+=1
+			large+=1
+		elif array[equals] == k:
+			equals+=1
+		elif array[equals] < k:
+			array[equals] = array[small] + array[equals]
+			array[large] = array[equals] - array[small]
+			array[equals] = array[equals] - array[small]
+			equals+=1
+			small-=1
 
 
 
