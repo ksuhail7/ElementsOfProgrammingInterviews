@@ -39,8 +39,8 @@ public class ScoreCombinationsP17_1 {
     }
 
     public static void main(String[] args) {
-        List<Integer> denominations = new ArrayList<>(Arrays.asList(2, 5, 10));
-        int total = 17;
+        List<Integer> denominations = new ArrayList<>(Arrays.asList(2, 5, 10, 20, 50));
+        int total = 77;
         List<List<Combination>> combinations = combinations(denominations, 0, total);
         if (combinations != null) {
             for (List<Combination> combinationList : combinations) {
