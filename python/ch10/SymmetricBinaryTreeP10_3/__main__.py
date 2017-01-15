@@ -7,5 +7,5 @@ import random
 array = [314, 6, 6, -1, 2, 2, -1, -1, -1, -1, 3, 3, -1]
 print(array)
 bst = BinaryTree(array)
-# bst.inorder_traversal()
+bst.inorder_traversal()
 print(bst.is_symmetric())
