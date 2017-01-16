@@ -1,17 +1,4 @@
 #!/usr/bin/env python3
-<<<<<<< HEAD
-from sklearn import tree
-
-features = [[140, 0], [130, 0], [150, 1],[ 170, 1]]  # 0 - smooth, 1 - bumpy
-labels = [1, 1, 0, 0]  # 1 - apples, 0 - oranges
-
-clf = tree.DecisionTreeClassifier()
-clf = clf.fit(features, labels)
-print(clf.predict([[160, 0]]))
-cost = []
-print("hello")
-=======
-
 
 def max_revenue(cost, n):
     if n == 0:
@@ -107,4 +94,3 @@ assert (max_revenue_bottom_up(cost, 7) == 18)
 assert (max_revenue_bottom_up(cost, 8) == 22)
 assert (max_revenue_bottom_up(cost, 9) == 25)
 assert (max_revenue_bottom_up(cost, 10) == 30)
->>>>>>> ffb463e8a8119e77ae993aed332baf4d6ca2db59
