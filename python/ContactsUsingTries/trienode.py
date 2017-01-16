@@ -15,6 +15,8 @@ class TrieNode:
         return self.children
 
     def add_children(self, ch, node):
+        #for k in self.children:
+            #print(k, self.children[k].get_char())
         self.children[ch] = node
 
     def is_complete_word(self):
