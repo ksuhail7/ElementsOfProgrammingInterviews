@@ -22,7 +22,7 @@ class TrieNode:
         if string is None or len(string) < 1:
             return
         firstChar = string[0]
-        node = self.addChar(char)
+        node = self.addChar(firstChar)
         node.addString(string[1:])
 
     def noOfWords(self):
