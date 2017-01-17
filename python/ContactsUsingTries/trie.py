@@ -49,36 +49,34 @@ class Trie:
                     words.append(substr)
         return words
 
-
     def get_matching_words(self, prefix):
-        return Trie.get_matching_words_helper(self.root, prefix, 0)
+        if prefix is None or len(prefix) == 0:
+            return self.get_full_words()
 
-    @staticmethod
-    def get_matching_words_helper(node, prefix, index):
+        node = self.root
+        for char in prefix:
+            if node is None:
+                return []
+            children = node.get_children()
+            if char in children:
+                node = children[char]
+            else:
+                node = None
+
         if node is None:
-            return None
-
-        if index >= len(prefix):
             return []
 
-        children = node.get_children()
+        partial_words = []
         words = []
         if node.is_complete_word():
-            words.append(node.get_char())
+            words.append(prefix)
+        children = node.get_children()
+        for child in children:
+            partial_words.append(Trie.get_full_words_helper(children[child]))
 
-        character = prefix[index]
-        if character not in children:
-            return None
-        substrings = Trie.get_matching_words_helper(children[character], prefix, index+1)
-        if substrings is None:
-            return None
-        for substr in substrings:
-            if node.get_char() is not '*':
-                words.append(node.get_char() + substr)
-            else:
-                words.append(substr)
+        for partial_word in partial_words:
+            for pword in partial_word:
+                words.append(prefix + pword)
+
         return words
 
-
-    def get_word_count(self, prefix):
-        pass

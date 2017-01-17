@@ -11,7 +11,7 @@ trie.add_string("chunnu")
 trie.add_string("call")
 
 #words = trie.get_node("h")
-print(trie.get_matching_words("h"))
+print(trie.get_matching_words("call"))
 
 print(trie.get_full_words())
 
