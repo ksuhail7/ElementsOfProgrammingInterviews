@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 def max_revenue(cost, n):
     if n == 0:
         return 0
