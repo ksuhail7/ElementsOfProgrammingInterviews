@@ -18,3 +18,8 @@ gradlew
 gradlew.bat
 src/main/resources/
 src/test/resources/
+
+.vscode
+
+cmake-build-debug/
+cmake-build-release/
